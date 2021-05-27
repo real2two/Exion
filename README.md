@@ -1,6 +1,10 @@
 # Exion
 
-A private chat platform.
+A private chat platform. 
+
+Keep in mind this won't be updated as much, and the code quality is terrible.
+
+This project was made for fun, and I've learnt a lot of bad programming practices I have done, and how I could improve it. (but I was too lazy to)
 
 # Developers
 
