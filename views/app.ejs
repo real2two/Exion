@@ -1,0 +1,86 @@
+<% 
+    let option = "account";
+    
+    let paths = [
+        "account",
+        "people",
+    ];
+    
+    let options = paths.filter(p => `/app/${p}` == `${path}` || `/app/${p}/` == `${path}`);
+    let option_userid;
+    
+    if (options.length == 1) option = options[0];
+
+    if (path.startsWith("/app/messages/") && path !== "/app/messages/") {
+        option_userid = path.slice("/app/messages/".length);
+        option = "messages";
+    };
+ %> 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/fonts/css/all.css" rel="stylesheet"> <!-- https://use.fontawesome.com/releases/v5.15.3/fontawesome-free-5.15.3-web.zip -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/markdown.css">
+    <title>Exion - App</title>
+</head>
+
+<body>
+    <div class="header">
+        <h2>Exion</h2>
+    </div>
+
+    <div class="chats-grid">
+        <div class="chats-sidebar">
+            <div class="chats-sidebar-item chats-sidebar-item-unselected" onclick="loadPage('account', event.currentTarget);" id="account">
+                <div class="chats-sidebar-item-text">
+                    <h3><i class="fas fa-cog icon-account"></i> Account</h3>
+                </div>
+            </div>
+            <div class="chats-sidebar-item chats-sidebar-item-unselected" onclick="loadPage('people', event.currentTarget);" id="people">
+                <div class="chats-sidebar-item-text">
+                    <h3><i class="fas fa-user-friends icon-people"></i> People</h3>
+                </div>
+            </div>
+            
+            <span id="dms"></span>
+
+        </div>
+    
+        <div class="chat" id="html">Loading...</div>
+    </div>
+
+    <script>
+        const first_option = "<%= option %>";
+        let first_user_id<% if (option_userid) { %> = "<%= option_userid %>";<% } %>;
+    </script>
+
+    <!-- Load code. -->
+
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/app/markdown.js"></script>
+
+    <script src="/assets/js/app/cookies.js"></script>
+
+    <script src="/assets/js/app/websockets.js"></script>
+    <script src="/assets/js/app/channels.js"></script>
+
+    <script src="/assets/js/app/messages.js"></script>
+    <script src="/assets/js/app/spoilers.js"></script>
+
+    <script src="/assets/js/app/usernames.js"></script>
+    <script src="/assets/js/app/token.js"></script>
+    <script src="/assets/js/app/emails.js"></script>
+    <script src="/assets/js/app/passwords.js"></script>
+
+    <script src="/assets/js/app/pathManagement.js"></script>
+
+    <script src="/assets/js/app/loginCheck.js"></script>
+</body>
+
+</html>
