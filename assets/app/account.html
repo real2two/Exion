@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Account</h1>
+    <p class="mt-20">
+        ID: <span id="userID"></span><br>
+        Username: <span id="username"></span><br>
+        Email: <span id="email"></span> <span class="email-reveal" style="color: var(--brand);" onclick="toggleEmail(event);">Show</span><br>
+        Token: <spoiler class="spoiler" onclick="openSpoiler(event);" id="token"></spoiler>
+    </p>
+
+    <p class="mt-10" style="color: var(--brand);" id="changeUsernameError"></p>
+    <h3 class="mt-20">Change Username</h3>
+    <p class="mt-10">
+        New Username: <input id="changeUsernameUsername" type="text" style="color: black;" autocomplete="off"><br>
+        <button class="mt-20" onclick="changeUsername();">Change Username</button>
+    </p>
+
+    <p class="mt-10" style="color: var(--brand);" id="changeEmailError"></p>
+    <h3 class="mt-20">Change Email</h3>
+    <p class="mt-10">
+        New Email: <input id="changeEmailNewEmail" type="email" style="color: black;" autocomplete="email"><br>
+        Password: <input id="changeEmailPassword" type="password" style="color: black;" autocomplete="current-password"><br>
+        <button class="mt-20" onclick="changeEmail();">Change Email</button>
+    </p>
+
+    <p class="mt-10" style="color: var(--brand);" id="changePasswordError"></p>
+    <h3 class="mt-20">Change Password</h3>
+    <p class="mt-10">
+        Password: <input id="changePasswordOldPassword" type="password" style="color: black;" autocomplete="current-password"><br>
+        New Password: <input id="changePasswordNewPassword" type="password" style="color: black;" autocomplete="new-password"><br>
+        <button class="mt-20" onclick="changePassword();">Change Password</button>
+    </p>
+
+    <p class="mt-10" style="color: var(--brand);" id="regenError"></p>
+    <h3 class="mt-20">Regenerate Token</h3>
+    <p class="mt-10">
+        Password: <input id="regenerateTokenPassword" type="password" style="color: black;" autocomplete="current-password"><br>
+        <button class="mt-20" onclick="regenerateToken();">Regenerate Token</button>
+    </p>
+    <button class="mt-20" onclick="document.location.href = '/logout';">Logout</button>
+</div>
